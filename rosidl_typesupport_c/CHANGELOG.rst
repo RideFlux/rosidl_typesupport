@@ -2,6 +2,17 @@
 Changelog for package rosidl_typesupport_c
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+3.2.2 (2024-04-24)
+------------------
+* Fixed warnings - strict-prototypes (`#155 <https://github.com/ros2/rosidl_typesupport/issues/155>`_) (`#156 <https://github.com/ros2/rosidl_typesupport/issues/156>`_)
+* Contributors: mergify[bot]
+
+3.2.1 (2024-03-27)
+------------------
+* compare string contents but string pointer addresses. (`#153 <https://github.com/ros2/rosidl_typesupport/issues/153>`_)
+* Set hints to find the python version we actually want. (`#150 <https://github.com/ros2/rosidl_typesupport/issues/150>`_)
+* Contributors: Chris Lalancette, Tomoya Fujita
+
 3.2.0 (2023-06-07)
 ------------------
 * Don't override user provided compile definitions (`#145 <https://github.com/ros2/rosidl_typesupport/issues/145>`_)
