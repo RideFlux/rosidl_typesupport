@@ -153,6 +153,19 @@ add_dependencies(
   ${rosidl_generate_interfaces_TARGET}__rosidl_generator_c
 )
 
+if(ROSIDL_ENABLE_PCH AND CMAKE_VERSION VERSION_GREATER_EQUAL "3.16")
+  target_precompile_headers(${rosidl_generate_interfaces_TARGET}${_target_suffix} PRIVATE
+    # msg__type_support.cpp.em
+    $<$<COMPILE_LANGUAGE:C>:"cstddef">
+    $<$<COMPILE_LANGUAGE:C>:"rosidl_runtime_c/message_type_support_struct.h">
+    $<$<COMPILE_LANGUAGE:C>:"rosidl_typesupport_c/identifier.h">
+    $<$<COMPILE_LANGUAGE:C>:"rosidl_typesupport_c/message_type_support_dispatch.h">
+    $<$<COMPILE_LANGUAGE:C>:"rosidl_typesupport_c/type_support_map.h">
+    $<$<COMPILE_LANGUAGE:C>:"rosidl_typesupport_c/visibility_control.h">
+    $<$<COMPILE_LANGUAGE:C>:"rosidl_typesupport_interface/macros.h">
+  )
+endif()
+
 if(NOT rosidl_generate_interfaces_SKIP_INSTALL)
   install(
     TARGETS ${rosidl_generate_interfaces_TARGET}${_target_suffix}
